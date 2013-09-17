@@ -103,7 +103,7 @@ class TagAutoSuggest(forms.TextInput):
                         $("#%(result_id)s").val(tags_as_string);
                     });
                 });
-            })(django.jQuery);
+            })((typeof window.jQuery == 'undefined' && typeof window.django != 'undefined') ? django.jQuery : jQuery);
             </script>""" % {
                 'result_id': result_attrs['id'],
                 'widget_id': widget_attrs['id'],
